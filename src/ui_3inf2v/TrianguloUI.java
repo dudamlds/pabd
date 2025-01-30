@@ -47,6 +47,11 @@ public class TrianguloUI extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Triângulos");
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
 
         jSeparator1.setBackground(new java.awt.Color(255, 255, 255));
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
@@ -179,6 +184,13 @@ public class TrianguloUI extends javax.swing.JFrame {
             }
         } else tipoLABEL.setText("Não é um triangulo");
     }//GEN-LAST:event_CALCActionPerformed
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        jTextField1.setText("");
+        jTextField2.setText("");
+        jTextField3.setText("");
+        tipoLabel.setText("");
+    }//GEN-LAST:event_jLabel1MouseClicked
 
     /**
      * @param args the command line arguments
