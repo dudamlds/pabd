@@ -4,6 +4,9 @@
  */
 package ui_3inf2v;
 
+import java.awt.Color;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author 20221074010023
@@ -166,7 +169,14 @@ public class TrianguloUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void CALCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CALCActionPerformed
-       double a = Double.parseDouble(jTextField1.getText());
+       
+        if (jTextField1.getText().equals("")
+                || jTextField2.getText().equals("")
+                || jTextField3.getText().equals(""))
+        
+        JOptionPane.showMessageDialog(null, "Preencha todos os lados!", "ERRO", JOptionPane.ERROR_MESSAGE);
+        
+        double a = Double.parseDouble(jTextField1.getText());
         double b = Double.parseDouble(jTextField2.getText());
         double c = Double.parseDouble(jTextField3.getText());
         double p = (a + b + c) / 2;
@@ -189,7 +199,9 @@ public class TrianguloUI extends javax.swing.JFrame {
         jTextField1.setText("");
         jTextField2.setText("");
         jTextField3.setText("");
-        tipoLabel.setText("");
+        tipoLABEL.setText("Tipo = ?");
+        tipoLABEL.setForeground(Color.black);
+        tipoLABEL.setText("Área = ?");
     }//GEN-LAST:event_jLabel1MouseClicked
 
     /**
